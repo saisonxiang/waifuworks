@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.cdnfonts.com/css/steamer" rel="stylesheet">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+    font-family: 'Steamer';font-size: 22px;
+}
+</style>
+</head>
+<body>
+<body style="background-color:#282828;color:silver;">
+
+
+<h1 style="text-align:center;"><span style="font-size: 42px;">
+    A WaifuWorks LLC Production
+<br>in Association with Blue Buddha LLC 
+<br>and the People at Data Department Depot LLC</span></h1>
+<h1><p style="text-align:center;"><span style="color:cornflowerblue;font-weight:bold">
+    The Ruby Saga Waifu Portfolio</span></p></h1>
+<p style="text-align:center;"><img src="(- _ -) zzz.png" 
+alt="(- _ -) zzz.com" width="400" height="400"><img src="t( -_- t ).png" alt="t( -_- t ).com" width="400" height="400"><img src="(∩｀-´)⊃━炎炎炎炎炎.png" alt="(∩｀-´)⊃━炎炎炎炎炎.com" width="400" height="400"></p>
+
+<div class="row">
+  <div class="column"><span style="font-size: 20px;">
+         Here's the chance to secure all 100 some odd 
+    <br> incarnations of the Chinese cyber torture VR 
+    <br> game sweeping the nations of Taiwan, Japan, and  
+    <br> America. For $250 USD you can own and produce all   
+    <br> the digital source material of Saison Xiang's 
+    <br> creations. These include the OG telepathic psycho 
+    <br> asian waifu, RubyTeacher, the psycho sisters Hirro 
+    <br> and CantBackDown, and several more.</span>
+    <br>
+    <br>
+    <br> 
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=Ab72U_9t7Y7nmNevtQ9096D5jk8jHsQhLQcgNe26X9tfpi2MeCH2EGJoHXOA8VPDaQhxNmMQfN27C4ND&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'pill',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"The complete digital fan art portfolio of the Ruby Saga of VR chat games from Saison Xiang","amount":{"currency_code":"USD","value":250}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+  </div>
+  <div class="column">
+     <p style="text-align:center;"><img src="(◕◕✿)ORLY.png" alt="(◕◕✿)ORLY.com" width="600" height="400"></p> 
+  </div>
+</div>
+
+</body>
+</html>
