@@ -5,7 +5,6 @@
 Just dreaming about these really cool players in my imaginary VR game and writing free form business 
 models for what content I have created so far with the communities I am most interested in.
 
---------
 
 ### HTML
 
@@ -20,7 +19,6 @@ functionality with strictly iOS and MacOS Ventura running only Safairi. I will c
 Chrome and a Windows build at various completion levels but I don't want to toggle between all the 
 possibilities for every single edit given I make so many single item edits.
 
----------
 
 ### OPEN SOURCE RELATIONSHIPS?
 
@@ -39,7 +37,7 @@ code hell that is already deprecated all to shit. At least I can continue to lea
 free though. Sifting throught the deprecated libraries on google search for bot functionalities 
 that I can actually comprehend and just build simple toys for myself. 
 
-----------
+
 
 ### *WARNING*
 ### *THIS MAY NOT BE SOMETHING YOU WANT TO READ*
@@ -60,6 +58,6 @@ cringe, but it's my cringe. You guys have all your cringe that goes on everyday 
 why can't I have mine, on my own various text, voice, and video channels that I can decide when 
 they should be deleted?
 
----------
+
 
 
