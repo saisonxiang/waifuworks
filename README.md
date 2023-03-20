@@ -1,9 +1,9 @@
-WAIFUWORKS LLC: AN OPEN SOURCE DREAM
-
+#WAIFUWORKS LLC: AN OPEN SOURCE DREAM
+-
 -Just dreaming about these really cool players in my imaginary VR game and writing free form business models for what content I have created so far with
 -the communities I am most interested in.
 -
--HTML
+#HTML
 -The website so far strictly uses HTML code that I've gleaned mostly from https://www.w3schools.com. They have been the best site so far with my googling
 -problem statements for what I want the page to look like and how I want it to navigate. I just want a simple site that allows for the PayPal code I am
 -able to create for free with my free PayPal business account. I can state the price for goods I have for sale and create makeshift purchase pages for each
@@ -11,8 +11,7 @@ WAIFUWORKS LLC: AN OPEN SOURCE DREAM
 -Windows build at various completion levels but I don't want to toggle between all the possibilities for every single edit given I make so many single item
 -edits.
 -
--
--OPEN SOURCE RELATIONSHIPS?
+#OPEN SOURCE RELATIONSHIPS?
 -I want this to remain a $0 investment project as long as I can. So far over the course of about 5 years I have been building my project's story and web
 -presence. My writing has improved over the course of the project and so has my quality of resources and their mangagement. I started journaling on the  
 -"risque" website FetLife that gave 0 real support for building your own free web presence. Then I moved to Wordpress.com that allows for free domains with
@@ -22,8 +21,8 @@ WAIFUWORKS LLC: AN OPEN SOURCE DREAM
 -deprecated all to shit. At least I can continue to learn and build for free though. Sifting throught the deprecated libraries on google search for bot 
 -functionalities that I can actually comprehend and just build simple toys for myself. 
 -
--*WARNING*
--*THIS MAY NOT BE SOMETHING YOU WANT TO READ*
+#*WARNING*
+#*THIS MAY NOT BE SOMETHING YOU WANT TO READ*
 -I suppose that was what I was supposed to learn from FetLife all along; I need a computational toy I can run until it breaks from my over my over
 -stimulation and a cyber-boss I can verbally abuse as well as cyber abuse with my camera that I can turn off when I please. It *is* a pretty entertaining 
 -game. Whoever you guys are, you are smart about what people really want even if they themselfes don't really know what they want. Thanks for letting us
