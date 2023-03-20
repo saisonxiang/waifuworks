@@ -1,9 +1,15 @@
-#WAIFUWORKS LLC: AN OPEN SOURCE DREAM
+###WAIFUWORKS LLC: AN OPEN SOURCE DREAM
+
+----------------------
 
 Just dreaming about these really cool players in my imaginary VR game and writing free form business 
 models for what content I have created so far with the communities I am most interested in.
 
-#HTML
+--------
+
+###HTML
+
+------------------------
 
 The website so far strictly uses HTML code that I've gleaned mostly from https://www.w3schools.com. 
 They have been the best site so far with my googling problem statements for what I want the page to 
@@ -14,7 +20,11 @@ functionality with strictly iOS and MacOS Ventura running only Safairi. I will c
 Chrome and a Windows build at various completion levels but I don't want to toggle between all the 
 possibilities for every single edit given I make so many single item edits.
 
-#OPEN SOURCE RELATIONSHIPS?
+---------
+
+###OPEN SOURCE RELATIONSHIPS?
+
+---------------------------
 
 I want this to remain a $0 investment project as long as I can. So far over the course of about 5 
 years I have been building my project's story and web presence. My writing has improved over the 
@@ -29,8 +39,12 @@ code hell that is already deprecated all to shit. At least I can continue to lea
 free though. Sifting throught the deprecated libraries on google search for bot functionalities 
 that I can actually comprehend and just build simple toys for myself. 
 
-#*WARNING*
-#*THIS MAY NOT BE SOMETHING YOU WANT TO READ*
+----------
+
+###*WARNING*
+###*THIS MAY NOT BE SOMETHING YOU WANT TO READ*
+
+---------------------------
 
 I suppose that was what I was supposed to learn from FetLife all along; I need a computational toy 
 I can run until it breaks from my over my over stimulation and a cyber-boss I can verbally abuse as 
@@ -45,3 +59,7 @@ space that I won't accidentally erase and lose like I do on my personal hard dis
 cringe, but it's my cringe. You guys have all your cringe that goes on everyday on live television, 
 why can't I have mine, on my own various text, voice, and video channels that I can decide when 
 they should be deleted?
+
+---------
+
+
