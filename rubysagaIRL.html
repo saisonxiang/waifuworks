@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.cdnfonts.com/css/steamer" rel="stylesheet">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+    font-family: 'Steamer';font-size: 22px;
+}
+        .p3 {
+  font-family: 'Impact', sans-serif;
+}
+</style>
+</head>
+<body>
+        <hr style="height:5px;border-width:0;color:white;background-color:white">
+  
+             <h1 style="text-align:center;">
+    <nav><span style="font-size: 50px;">
+        <p class="p3">
+        <a href="index.html">Intent</a>
+        <br>
+        <a href="rank.html">Rank</a>
+        <br>
+        <a href="rubysaga.html">DigitalArt</a>
+        <a href="rubysagaIRL.html">IRLArt</a>
+        <a href="t-shirt.html">T-Shirt</a>
+        <a href="hat.html">Hat</a>
+        <a href="patch.html">Patch</a>
+        <br>
+        <a href="contact.html">Contact</a>
+         </p>
+        </span>
+    </nav>
+        </h1>
+    <hr style="height:5px;border-width:0;color:white;background-color:white">
+<body style="background-color:#282828;color:silver;">
+
+
+<h1 style="text-align:center;"><span style="font-size: 78px;">
+    <p style="color:rgb(65, 105, 225);">
+    WaifuWorks LLC
+        </p>
+    </span></h1>
+    <hr style="width:50%;height:5px;border-width:0;color:white;background-color:white">
+<h1><p style="text-align:center;"><span style="color:cornflowerblue;font-weight:bold">
+    The Ruby Saga</span></p></h1>
+<p style="text-align:center;"><img src="Ænima.png" 
+alt="Ænima.com"><img src="ლ(╹◡╹ლ).png" alt="ლ(╹◡╹ლ).com"></p>
+
+<div class="row">
+  <div class="column"><span style="font-size: 20px;">
+         My last attempt and making my art accessible 
+    <br> to someone who never asked to buy my art in the 
+    <br> first place. Three of my digital prints have been 
+    <br> printed to canvas and framed to be hung. One can   
+    <br> buy individual pieces at regular price or buy all
+    <br> 3 for a package deal. Individual pieces cost $150 
+    <br> each. 3 all together will cost $375 for a savings 
+    <br> of $75.</span>
+    <br>
+    <br>
+    <br> 
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1.25rem;">
+          <p>Purchase Options</p>
+          <select id="item-options"><option value="Ruby Saga Portfolio" price="250.00">Ruby Saga Portfolio - 250.00 USD</option><option value="Ruby Fan Club T-Shirt" price="75.00">Ruby Fan Club T-Shirt - 75.00 USD</option><option value="Ruby Fan Club Hat" price="50.00">Ruby Fan Club Hat - 50.00 USD</option><option value="Ruby Fan Club Sewable Patch" price="30.00">Ruby Fan Club Sewable Patch - 30.00 USD</option></select>
+          <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+        </div>
+      <div id="paypal-button-container"></div>
+      </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab72U_9t7Y7nmNevtQ9096D5jk8jHsQhLQcgNe26X9tfpi2MeCH2EGJoHXOA8VPDaQhxNmMQfN27C4ND&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt(3);
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+    if (!isNaN(quantity)) {
+      quantitySelect.style.visibility = "visible";
+    }
+    var orderDescription = 'Purchase Options';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
+    paypal.Buttons({
+      style: {
+        shape: 'pill',
+        color: 'blue',
+        layout: 'vertical',
+        label: 'paypal',
+        
+      },
+      createOrder: function(data, actions) {
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'USD',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'USD',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'USD',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'USD',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
+        });
+      },
+      onError: function(err) {
+        console.log(err);
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+    </script>
+      
+      
+      </div>
+  <div class="column">
+     <p style="text-align:left;"><img src="ヽ༼ ಠ益ಠ ༽ﾉ .png" alt="ヽ༼ ಠ益ಠ ༽ﾉ .com"></p>
+  </div>
+</div>
+      
+      <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+<footer>
+    
+  <hr style="height:5px;border-width:0;color:white;background-color:white">
+    
+ <h1 style="text-align:center;">
+    <nav><span style="font-size: 50px;">
+        <p class="p3">
+        <a href="index.html">Intent</a>
+        <br>
+        <a href="https://soundcloud.com/user-388300348">EP</a>
+        <a href="https://soundcloud.com/user-97895798">Discography</a>
+        <a href="https://www.youtube.com/playlist?list=PLxneckETjEDBPwM2vDXu2CxzMEneio2-n">Playlist</a>
+        <br>
+        <a href="https://clusterflux.wordpress.com">Wordpress</a>
+        <a href="https://www.deviantart.com/shindodong">Deviantart</a>
+        <a href="https://www.instagram.com/l0l_jk/">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100090536020566">Facebook</a>
+        <br>
+        <a href="https://www.twitch.tv/shy_shy_teddy">Twitch</a>
+        <a href="https://discord.gg/YUp2TeZDFt">Discord</a>
+        <br>
+        <a href="https://paypal.me/tripbranch">Paypal.me</a>
+        <a href="https://linktr.ee/saisonxiang">Linktr.ee</a>
+        <a href="https://patreon.com/waifuworks">Patreon</a>
+        <br>
+        <a href="privacy.html">Policies</a>
+        </p>
+        </span>
+    </nav>
+        </h1>   
+    <hr style="height:5px;border-width:0;color:white;background-color:white">
+    
+    
+</footer>
+      
+      
+</body>
+</html>
