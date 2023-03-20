@@ -1,4 +1,4 @@
-###WAIFUWORKS LLC: AN OPEN SOURCE DREAM
+### WAIFUWORKS LLC: AN OPEN SOURCE DREAM
 
 ----------------------
 
@@ -7,7 +7,7 @@ models for what content I have created so far with the communities I am most int
 
 --------
 
-###HTML
+### HTML
 
 ------------------------
 
@@ -22,7 +22,7 @@ possibilities for every single edit given I make so many single item edits.
 
 ---------
 
-###OPEN SOURCE RELATIONSHIPS?
+### OPEN SOURCE RELATIONSHIPS?
 
 ---------------------------
 
@@ -41,8 +41,8 @@ that I can actually comprehend and just build simple toys for myself.
 
 ----------
 
-###*WARNING*
-###*THIS MAY NOT BE SOMETHING YOU WANT TO READ*
+### *WARNING*
+### *THIS MAY NOT BE SOMETHING YOU WANT TO READ*
 
 ---------------------------
 
