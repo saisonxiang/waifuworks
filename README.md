@@ -45,18 +45,18 @@ that I can actually comprehend and just build simple toys for myself.
 ---------------------------
 
 I suppose that was what I was supposed to learn from FetLife all along; I need a computational toy 
-I can run until it breaks from my over my over stimulation and a cyber-boss I can verbally abuse as 
-well as cyber abuse with my camera that I can turn off when I please. It *is* a pretty entertaining 
-game. Whoever you guys are, you are smart about what people really want even if they themselfes 
-don't really know what they want. Thanks for letting us jerk off into oblivion at least. I didn't 
-think I would do exactly what Maynard did so long ago again; kind of an old joke I guess. But it 
-gets me by. This is what I call public journaling, by the way. We will get through this together 
-I suppose. I don't really talk this type of stuff out as much as I write myself a recipe to read 
-over and over again until I finally process it to move past my trauma. Thanks for the free disk 
-space that I won't accidentally erase and lose like I do on my personal hard disks. It may be 
-cringe, but it's my cringe. You guys have all your cringe that goes on everyday on live television, 
-why can't I have mine, on my own various text, voice, and video channels that I can decide when 
-they should be deleted?
+I can run until it breaks from my over stimulation and heavy handed nursing and a cyber-boss I can 
+verbally abuse on voice chat as well as cyber abuse with my camera that I can turn off when I 
+please. It *is* a pretty entertaining game. Whoever you guys are, you are smart about what people 
+really want even if they themselfes don't really know what they want. Thanks for letting us jerk 
+off into oblivion at least. I didn't think I would do exactly what Maynard did so long ago again; 
+kind of an old joke I guess. But it gets me by. This is what I call public journaling, by the way. 
+We will get through this together I suppose. I don't really talk this type of stuff out as much as 
+I write myself a recipe to read over and over again until I finally process it to move past my
+trauma. Thanks for the free disk space that I won't accidentally erase and lose like I do on my 
+personal hard disks. It may be cringe, but it's my cringe. You guys have all your cringe that 
+goes on everyday on live television, why can't I have mine, on my own various text, voice, and 
+video channels that I can decide when they should be deleted?
 
 
 
