@@ -100,9 +100,9 @@ alt="(- _ -) zzz.com" width="400" height="400"><img src="t( -_- t ).png" alt="t(
     <div id="smart-button-container">
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
-          <p>Purchase Options</p>
-          <select id="item-options"><option value="Ruby Saga Digital Portfolio" price="250.00">Ruby Saga Digital Portfolio - 250.00 USD</option><option value="Ruby Fan Club T-Shirt" price="75.00">Ruby Fan Club T-Shirt - 75.00 USD</option><option value="Ruby Fan Club Hat" price="50.00">Ruby Fan Club Hat - 50.00 USD</option><option value="Ruby Fan Club Sewable Patch" price="30.00">Ruby Fan Club Sewable Patch - 30.00 USD</option><option value="Single IRL Art Piece" price="150.00">Single IRL Art Piece - 150.00 USD</option><option value="All 3 IRL Art Pieces" price="375.00">All 3 IRL Art Pieces - 375.00 USD</option><option value="Blue Buddha T-Shirt" price="75.00">Blue Buddha T-Shirt - 75.00 USD</option></select>
-          <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+          <p>Choose Product Listing (Each is Described in Detail on its Respective Web Page)</p>
+          <select id="item-options"><option value="Ruby Saga Digital Portfolio (100+)" price="8246.21">Ruby Saga Digital Portfolio (100+) - 8246.21 USD</option><option value="Ruby Saga IRL Art (All 3)" price="824.62">Ruby Saga IRL Art (All 3) - 824.62 USD</option><option value="Ruby Saga IRL Art (1)" price="314.16">Ruby Saga IRL Art (1) - 314.16 USD</option><option value="Ruby Saga T-Shirt (1)" price="112.35">Ruby Saga T-Shirt (1) - 112.35 USD</option><option value="Ruby Saga Hat (1)" price="82.46">Ruby Saga Hat (1) - 82.46 USD</option><option value="Ruby Saga Patch (1)" price="31.41">Ruby Saga Patch (1) - 31.41 USD</option><option value="Blue Buddha Buddhist Bicycle Gang T-Shirt" price="112.35">Blue Buddha Buddhist Bicycle Gang T-Shirt - 112.35 USD</option></select>
+          <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
       <div id="paypal-button-container"></div>
       </div>
@@ -112,19 +112,19 @@ alt="(- _ -) zzz.com" width="400" height="400"><img src="t( -_- t ).png" alt="t(
       function initPayPalButton() {
         var shipping = 0;
         var itemOptions = document.querySelector("#smart-button-container #item-options");
-    var quantity = parseInt(3);
+    var quantity = parseInt();
     var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
     if (!isNaN(quantity)) {
       quantitySelect.style.visibility = "visible";
     }
-    var orderDescription = 'Purchase Options';
+    var orderDescription = 'Choose Product Listing (Each is Described in Detail on its Respective Web Page)';
     if(orderDescription === '') {
       orderDescription = 'Item';
     }
     paypal.Buttons({
       style: {
         shape: 'pill',
-        color: 'blue',
+        color: 'white',
         layout: 'vertical',
         label: 'paypal',
         
