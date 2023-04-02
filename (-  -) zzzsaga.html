@@ -72,7 +72,20 @@ body {
     <hr style="height:5px;border-width:0;color:white;background-color:white">
 <body style="background-color:#282828;color:silver;">
     
-    <div id="container" style="width: 160px; height: 58px;"></div>
+   <div id="container" style="width: 160px; height: 58px;"></div>
+
+// javascript fragment
+const container = document.getElementById('container');
+const button = googlePayClient.createButton({
+  buttonColor: 'white',
+  buttonType: 'plain',
+  buttonLocale: 'en',
+  buttonSizeMode: 'fill',
+  onClick: () => {},
+  allowedPaymentMethods: [] // use the same payment methods as for the loadPaymentData() API call
+});
+
+container.appendChild(button);
 
 
 <h1 style="text-align:center;"><span style="font-size: 78px;">
