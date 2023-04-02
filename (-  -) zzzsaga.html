@@ -359,6 +359,7 @@ let paymentsClient = null;
 function getGoogleIsReadyToPayRequest() {
   return Object.assign(
       {},
+    
       baseRequest,
       {
         allowedPaymentMethods: [baseCardPaymentMethod]
