@@ -1,169 +1,77 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PayPal SDK Python Demo <test></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-      
-    <script data-sdk-integration-source="integrationbuilder_ac"></script>
+    <!-- Replace "test" with your own sandbox Business account app client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=tAb72U_9t7Y7nmNevtQ9096D5jk8jHsQhLQcgNe26X9tfpi2MeCH2EGJoHXOA8VPDaQhxNmMQfN27C4ND
+                 &currency=USD"></script>
+    <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
-    <script src="https://www.paypal.com/sdk/js?Ab72U_9t7Y7nmNevtQ9096D5jk8jHsQhLQcgNe26X9tfpi2MeCH2EGJoHXOA8VPDaQhxNmMQfN27C4ND"></script>
     <script>
-      const FUNDING_SOURCES = [
-        paypal.FUNDING.PAYPAL,
-        paypal.FUNDING.VENMO,
-        paypal.FUNDING.CARD
-        paypal.FUNDING.SEPA	
-        paypal.FUNDING.BANCONTACT	
-        paypal.FUNDING.EPS	
-        paypal.FUNDING.GIROPAY	
-        paypal.FUNDING.IDEAL	
-        paypal.FUNDING.MERCADOPAGO	
-        paypal.FUNDING.MYBANK	
-        paypal.FUNDING.P24	
-        paypal.FUNDING.SOFORT
-      ];
-      FUNDING_SOURCES.forEach(fundingSource => {
-        paypal.Buttons({
-          fundingSource,
-          style: {
-            layout: 'vertical',
-            shape: 'pill',
-            color: ('blue' : '',
-          },
-          createOrder: async (data, actions) => {
-            const response = await fetch("/orders", {
-              method: "POST",
-            });
-            const details = await response.json();
-            return details.id;
-          },
-          
-          onApprove: async (data, actions) => {
-            const response = await fetch(`/orders/${data.orderID}/capture`, {
-              method: "POST",
-            });
-            const details = await response.json();
-            // Three cases to handle:
-            //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
-            //   (2) Other non-recoverable errors -> Show a failure message
-            //   (3) Successful transaction -> Show confirmation or thank you
-
-            // This example reads a v2/checkout/orders capture response, propagated from the server
-            // You could use a different API or structure for your 'orderData'
-
-            const errorDetail = Array.isArray(details.details) && details.details[0];
-            if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
-              return actions.restart(); // Recoverable state, per:
-              // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
-            }
-
-            if (errorDetail) {
-              let msg = 'Sorry, your transaction could not be processed.';
-              if (errorDetail.description) msg += '\n\n' + errorDetail.description;
-              if (details.debug_id) msg += ' (' + details.debug_id + ')';
-              return alert(msg); // Show a failure message (try to avoid alerts in production environments)
-            }
-
-            // Successful capture! For demo purposes:
-            console.log('Capture result', details, JSON.stringify(details, null, 2));
-            const transaction = details.purchase_units[0].payments.captures[0];
-            alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
-          },
-        })
-        .render("#paypal-button-container");
-       })
-
-    </script>
-    
-    
-    import express from "express";
-import fetch from "node-fetch";
-import path from "path";
-const __dirname = path.resolve();
-
-const app = express();
-const getAccessToken = async () => {
-  const clientId = "Ab72U_9t7Y7nmNevtQ9096D5jk8jHsQhLQcgNe26X9tfpi2MeCH2EGJoHXOA8VPDaQhxNmMQfN27C4ND";
-  const appSecret = "ECAE32jvprT50Q80zsAO0SscgntFViK1eusmM-nUQ1sSwf8yEp3YOOJr9hpW1Kp0hzabMk8A29SATk2w";
-  const url = "https://api-m.sandbox.paypal.com/v1/oauth2/token";
-  const response = await fetch(url, {
-    body: "grant_type=client_credentials",
-    method: "POST",
-    headers: {
-      Authorization:
-        "Basic " + Buffer.from(clientId + ":" + appSecret).toString("base64"),
-    },
-  });
-  const data = await response.json();
-  return data.access_token;
-};
-
-const createOrder = async () => {
-  const url = "https://api-m.sandbox.paypal.com/v2/checkout/orders";
-  const payload = {
-    intent: "CAPTURE",
-    purchase_units: [
-      {
-        amount: {
-          currency_code: "USD",
-          value: "0.02",
+      paypal.Buttons({
+        // Order is created on the server and the order id is returned
+        createOrder() {
+          return fetch("/my-server/create-paypal-order", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            // const FUNDING_SOURCES = [
+       //  paypal.FUNDING.PAYPAL,
+       //  paypal.FUNDING.VENMO,
+       //  paypal.FUNDING.CARD
+       //  paypal.FUNDING.SEPA	
+       //  paypal.FUNDING.BANCONTACT	
+       //  paypal.FUNDING.EPS	
+       //  paypal.FUNDING.GIROPAY	
+       //  paypal.FUNDING.IDEAL	
+       //  paypal.FUNDING.MERCADOPAGO	
+        // paypal.FUNDING.MYBANK	
+       //  paypal.FUNDING.P24	
+        // paypal.FUNDING.SOFORT
+            // use the "body" param to optionally pass additional order information
+            // like product skus and quantities
+            body: JSON.stringify({
+              cart: [
+                {
+                  sku: "πøπ",
+                  quantity: "1",
+                },
+              ],
+            }),
+          })
+          .then((response) => response.json())
+          .then((order) => order.id);
         },
-      },
-    ],
-  };
-  const headers = {
-    Authorization: `Bearer ${await getAccessToken()}`,
-    "Content-Type": "application/json",
-  };
-  const response = await fetch(url, {
-    headers,
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
-  const data = await response.json();
-  if (data.error) {
-    throw new Error(error);
-  }
-  return data;
-};
-
-const capturePayment = async (orderID) => {
-  const url = `https://api-m.sandbox.paypal.com/v2/checkout/orders/${orderID}/capture`;
-  const headers = {
-    Authorization: `Bearer ${await getAccessToken()}`,
-    "Content-Type": "application/json",
-  };
-  const response = await fetch(url, {
-    headers,
-    method: "POST",
-  });
-  const data = await response.json();
-  if (data.error) {
-    throw new Error(error);
-  }
-  return data;
-};
-
-app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
-
-app.post("/orders", async (req, res) => {
-  const response = await createOrder();
-  res.json(response);
-});
-
-app.post("/orders/:orderID/capture", async (req, res) => {
-  const response = await capturePayment(req.params.orderID);
-  res.json(response);
-});
-
-app.listen(9597, () => {
-  console.log("listening on http://localhost:9597/");
-});
-
-</body>
+        // Finalize the transaction on the server after payer approval
+        onApprove(data) {
+          return fetch("/my-server/capture-paypal-order", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          })
+          .then((response) => response.json())
+          .then((orderData) => {
+            // Successful capture! For dev/demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+            alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+            // const element = document.getElementById('paypal-button-container');
+            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            // Or go to another URL:  window.location.href = 'thank_you.html';
+          });
+        }
+      }).render('#paypal-button-container');
+    </script>
+  </body>
 </html>
+
+    
