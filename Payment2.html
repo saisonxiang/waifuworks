@@ -77,6 +77,15 @@ body {
         paypal.FUNDING.PAYPAL,
         paypal.FUNDING.VENMO,
         paypal.FUNDING.CARD
+        paypal.FUNDING.SEPA	
+        paypal.FUNDING.BANCONTACT	
+        paypal.FUNDING.EPS	
+        paypal.FUNDING.GIROPAY	
+        paypal.FUNDING.IDEAL	
+        paypal.FUNDING.MERCADOPAGO	
+        paypal.FUNDING.MYBANK	
+        paypal.FUNDING.P24	
+        paypal.FUNDING.SOFORT
       ];
       FUNDING_SOURCES.forEach(fundingSource => {
         paypal.Buttons({
@@ -84,7 +93,7 @@ body {
           style: {
             layout: 'vertical',
             shape: 'pill',
-            color: (fundingSource==paypal.FUNDING.PAYLATER) ? 'blue' : '',
+            color: ('blue' : '',
           },
           createOrder: async (data, actions) => {
             const response = await fetch("/orders", {
