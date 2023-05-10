@@ -68,9 +68,10 @@ body {
     <br>
     
 
+    
     <script data-sdk-integration-source="integrationbuilder_ac"></script>
     <div id="paypal-button-container"></div>
-    <script src="https://www.paypal.com/sdk/js?AVbeWEDGRvzyzgM6H_Bol6nFGz0rcyBpp7ImbW1438ZkOrkHKIm8tx4E9agRXX0BPl8XXOnSjIJsphH8F></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AVbeWEDGRvzyzgM6H_Bol6nFGz0rcyBpp7ImbW1438ZkOrkHKIm8tx4E9agRXX0BPl8XXOnSjIJsphH8"></script>
     <script>
       const FUNDING_SOURCES = [
         paypal.FUNDING.PAYPAL,
@@ -83,7 +84,7 @@ body {
           style: {
             layout: 'vertical',
             shape: 'pill',
-            color: (fundingSource==paypal.FUNDING.PAYLATER) ? 'gold' : '',
+            color: (fundingSource==paypal.FUNDING.PAYLATER) ? 'blue' : '',
           },
           createOrder: async (data, actions) => {
             const response = await fetch("/orders", {
@@ -129,7 +130,8 @@ body {
        })
 
     </script>
- 
+  
+      
       
     
     
