@@ -1,8 +1,8 @@
 # These are supported funding model platforms
 
-github: 
+custom: ['paypal.me/tripbranch', 'https://donate.stripe.com/dR6dTTfii7DL02k288']
+github: [saisonxiang, macandcheese-spaghetticode, pollypurge] 
 patreon: waifuworks
-open_collective: toki-mandrake
 ko_fi: ikemayfield
 tidelift: # Replace with a single Tidelift platform-name/package-name e.g., npm/babel
 community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
