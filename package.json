@@ -1,18 +1,18 @@
 {
-  "name": "html",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "name": "HUBBLE BUBBLE",
+  "version": "π.ø.π",
+  "description": "Teach this in school now Dad",
+  "main": "index.html",
   "scripts": {
-    "start": "serve .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "IKE ANGRY",
+    "test": "TICKLE IKE"
   },
-  "author": "",
+  "author": "TOKI",
   "license": "ISC",
   "devDependencies": {
-    "serve": "^14.1.2"
+    "GIT": "4"
   },
   "dependencies": {
-    "@google-pay/button-element": "file:../../src/button-element"
+    "tacos"
   }
 }
